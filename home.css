@@ -4,7 +4,7 @@
 }
 
 @font-face {
-    font-family: my font-1;
+    font-family: myfont-1;
     src: url(/Assets/Fonts/MyFont1.otf);
 }
 
@@ -217,7 +217,7 @@ nav a   {
 .firstname   {
     color: #ffffff;
     font-size: 100px;
-    font-family: my font-1;
+    font-family: myfont-1;
     font-weight: lighter;
 }
 
