@@ -67,7 +67,7 @@ nav a {
 }
 
 nav a span:nth-child(1) {
-    font-family: my font-1;
+    font-family: myfont-1;
     margin-right: 5px;
 }
 
