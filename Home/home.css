@@ -1,0 +1,578 @@
+@font-face {
+    font-family: American Captain;
+    src: url(/Assets/Fonts/American_Captain.ttf);
+}
+
+@font-face {
+    font-family: my font-1;
+    src: url(/Assets/Fonts/MyFont1.otf);
+}
+
+@font-face {
+    font-family: Futura Light;
+    src: url(/Assets/Fonts/futura/intrepid.ttf);
+}
+
+*   {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background: #5b5b5b;
+
+}
+
+/* 
+*    ***                  ***
+*    ***                  ***
+*    ***                  ***
+*    ***                  ***
+*    ***                  ***
+*    ************************
+*    ************************
+*    ***                  ***
+*    ***                  ***
+*    ***                  ***
+*    ***                  ***
+*    ***                  ***
+
+ */
+
+header   {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 75px;
+    background-color: #1e1e1e;
+}
+
+nav   {
+    display: flex;
+    width: 84%;
+    margin: 20px auto;
+    padding: 20px 0px;
+    align-items: center;
+    justify-content:space-between;
+}
+
+nav a {
+    font-size: 35px;
+    display: flex;
+    text-decoration: none;
+    justify-content: space-around;
+    color: white;
+    transition: 300ms ease;
+}
+
+nav a span:nth-child(1) {
+    font-family: my font-1;
+    margin-right: 5px;
+}
+
+nav a span:nth-child(2) {
+    font-family: American Captain;
+}
+
+nav a:hover span:nth-child(2) {
+    color: orange;
+}
+
+nav ul {
+    background: transparent;
+    display: flex;
+    flex-wrap: nowrap;
+}
+nav ul li   {
+    display: inline-flex;
+    list-style: none;
+    padding: 10px 20px 10px 20px;
+    justify-content: space-around;
+}
+
+nav ul li a   {
+    font-size: 13px;
+    background: transparent;
+    border: none;
+    padding: 10px 5px;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+nav ul li a::before   {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: orange;
+    transition: 0.5s ease;
+}
+
+nav ul li a:hover   {
+    color: white;
+}
+
+nav ul li a:hover::before   {
+    width: 100%;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: orange;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+nav ul li a:hover::after   {
+    height: 100%;
+
+}
+
+nav a   {
+    text-decoration: none;
+}
+
+.connect_button {
+    cursor: pointer;
+    position: relative;
+    padding: 5px 30px;
+    font-size: 18px;
+    color: orange;
+    border: 2px solid orange;
+    border-radius: 34px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+}
+
+.connect_button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: orange;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.connect_button:hover::before {
+    scale: 3;
+}
+
+.connect_button:hover {
+    color: #212121;
+    scale: 1.1;
+    box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
+    transform: rotate(-2deg);
+}
+
+.connect_button:active {
+    scale: 1;
+}
+
+
+/*
+ *    ******              ******
+ *    *******            *******
+ *    ***   ***         ***  ***
+ *    ***     ***     ***    ***
+ *    ***       *** ***      ***
+ *    ***        *****       ***
+ *    ***                    ***
+ *    ***                    ***
+ *    ***                    ***
+ *    ***                    ***
+ */
+
+
+.detail   {
+    padding: 10%;
+    background: #1e1e1e;
+    margin-top: 20px;
+}
+
+.detail h1   {
+    font-size: 50px;
+    color: #8e8e8e;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+}
+
+.firstname   {
+    color: #ffffff;
+    font-size: 100px;
+    font-family: my font-1;
+    font-weight: lighter;
+}
+
+.lastname   {
+    font-size: 100px;
+    color: orange;
+    font-family: American Captain;
+    font-weight: lighter;
+}
+
+.introline p {
+    color: #8e8e8e;
+    font-family: My Font1;
+    font-size: 25px;
+    max-width: fit-content;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typewriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    opacity: 0; /* Start with text hidden */
+    animation: 
+            typing 3.5s steps(40, end) forwards,
+            blink-caret .75s step-end infinite,
+            fadeIn 0.5s forwards;
+}
+
+@keyframes typing {
+    0% { width: 0; border-right: .15em solid orange; }
+    100% { width: 100%; border-right: none; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+
+
+.sociallinks {
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+.sociallinks li {
+    display: inline-flex;
+    list-style: none;
+    justify-content: space-around;
+    padding-right: 10px;
+}
+
+.sociallinks li a {
+    text-decoration: none;
+    background: transparent;
+}
+
+.sociallinks li button {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding: 10px 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+    border: none;
+    color: orange;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.sociallinks li button .app_name {
+    margin-left: 10px;
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 1s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.sociallinks li button:hover .app_name {
+    opacity: 1;
+    max-width: 100px;
+}
+
+.linkedin_button:hover {
+    color: #ffffff;
+    background: #0A78B5;
+}
+
+.instagram_button:hover {
+    color: #ffffff;
+    background: linear-gradient(45deg, #854cab, #e34c4c, #ffba5a);
+}
+
+.github_button:hover {
+    color: #ffffff;
+    background: rgb(98, 98, 98);
+}
+
+.twitter_button:hover {
+    color: #ffffff;
+    background: #249EF0;
+}
+
+.whatsapp_button:hover {
+    color: #ffffff;
+    background: #4BCA59;
+}
+
+
+.cv_button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    color: #272727;
+    cursor: pointer;
+    position: relative;
+    padding: 8px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    transition: all .15s ease;
+}
+
+.cv_button::before,
+.cv_button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: calc(50% - 5px);
+    border: 1px solid white;
+    transition: all .15s ease;
+}
+
+.cv_button::before {
+    top: 0;
+    border-bottom-width: 0;
+}
+
+.cv_button::after {
+    bottom: 0;
+    border-top-width: 0;
+}
+
+.cv_button:active,
+.cv_button:focus {
+    outline: none;
+}
+
+.cv_button:active::before,
+.cv_button:active::after {
+    right: 3px;
+    left: 3px;
+}
+
+.cv_button:active::before {
+    top: 3px;
+}
+
+.cv_button:active::after {
+    bottom: 3px;
+}
+
+.cv_button_lg {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #272727;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.cv_button_lg::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #272727;
+}
+
+.cv_button_lg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #272727;
+    transition: all .2s ease;
+}
+
+.cv_button_sl {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    left: -8px;
+    width: 0;
+    background-color: #585858;
+    transform: skew(-15deg);
+    transition: all .2s ease;
+}
+
+.cv_button_text {
+    position: relative;
+    text-decoration: none;
+    font-size: larger;
+    color: white;
+}
+
+.cv_button:hover {
+    color: #272727;
+}
+
+.cv_button:hover .cv_button_text {
+    color: orange;
+}
+
+.cv_button:hover .cv_button_sl {
+    width: calc(100% + 15px);
+}
+
+.cv_button:hover .cv_button_lg::after {
+    background-color: orange;
+}
+
+
+.display   {
+    position: absolute;
+    width: 45%;
+    height: 80%;
+    bottom: 5%;
+    right: 100px;
+}
+
+.shape  {
+    display: block;
+    height: 450px;
+    width: 450px;
+    transform: translateX(120px) translateY(100px);
+    background-color: rgb(0, 0, 0);
+    border-radius: 60% 40% 16% 84% / 75% 85% 15% 25%;
+    border: solid 5px rgba(255, 174, 0, 0.815);
+}
+
+.display img   {
+    transform: translateX(-50%);
+    max-height: 90%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    animation: image-display 2s;
+}
+
+@keyframes image-display {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*
+ *    ************
+ *    ************
+ *    ***
+ *    ***
+ *    ***
+ *    *******
+ *    *******
+ *    ***
+ *    ***
+ *    ***
+ *    ***
+ */
+
+footer   {
+    display: block;
+    position: relative;
+    padding: 25px 0 25px 0;
+    width: 100%;
+    height: auto;
+    background-color: #000000;
+}
+
+.contacts {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+
+.phone , .email, .location {
+    display: flex;
+    align-items: center;
+    filter: opacity(75%);
+    transition: 100ms;
+    cursor: pointer;
+}
+
+.phone:hover, .email:hover, .location:hover{
+    filter: opacity(100%);
+}
+
+.phone p, .email p, .location p{
+    font-family: sans-serif;
+    color: white;
+}
+
+.contacts div p a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.copyright {
+    width: 100%;
+    color: #8e8e8e;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* *ScrollBar* */
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track   {
+    background-color: #000000;
+    border: solid 3px orange;
+}
+
+::-webkit-scrollbar-thumb   {
+    background-color: orange;
+    border: solid 3px #000000;
+}
