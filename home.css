@@ -4,11 +4,6 @@
 }
 
 @font-face {
-    font-family: playwrite;
-    src: url(/Assets/Fonts/playwrite.ttf);
-}
-
-@font-face {
     font-family: Futura Light;
     src: url(/Assets/Fonts/futura/intrepid.ttf);
 }
@@ -67,7 +62,7 @@ nav a {
 }
 
 nav a span:nth-child(1) {
-    font-family: playwrite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-right: 5px;
 }
 
