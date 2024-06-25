@@ -4,8 +4,8 @@
 }
 
 @font-face {
-    font-family: MyFont-1;
-    src: url(/Assets/Fonts/MyFont1.ttf);
+    font-family: playwrite;
+    src: url(/Assets/Fonts/PlaywriteNGModern-Regular.ttf);
 }
 
 @font-face {
@@ -67,7 +67,7 @@ nav a {
 }
 
 nav a span:nth-child(1) {
-    font-family: MyFont-1;
+    font-family: playwrite;
     margin-right: 5px;
 }
 
@@ -217,7 +217,7 @@ nav a   {
 .firstname   {
     color: #ffffff;
     font-size: 100px;
-    font-family: MyFont-1;
+    font-family: playwrite;
     font-weight: lighter;
 }
 
