@@ -1,5 +1,5 @@
 @font-face {
-    font-family: Saria_condensed;
+    font-family: saria;
     src: url(/Assets/Fonts/SairaExtraCondensed-Medium.ttf);
 }
 
@@ -68,7 +68,7 @@ nav   {
 }
 
 .navicon span:nth-child(2) {
-    font-family: Saria_condensed;
+    font-family: saria;
     font-size: 3vw;
 }
 
@@ -221,7 +221,7 @@ main {
 .lastname   {
     font-size: 8vw;
     color: orange;
-    font-family: Saria_condensed;
+    font-family: saria;
     font-weight: lighter;
 }
 
