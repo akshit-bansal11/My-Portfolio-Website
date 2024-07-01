@@ -1,6 +1,6 @@
 @font-face {
-    font-family: American Captain;
-    src: url(/Assets/Fonts/American_Captain.ttf);
+    font-family: Saria_condensed;
+    src: url(/Assets/Fonts/SairaExtraCondensed-Medium.ttf);
 }
 
 @font-face {
@@ -21,7 +21,8 @@
 
 body {
     background: #5b5b5b;
-
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /* 
@@ -40,66 +41,60 @@ body {
 
  */
 
-header   {
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 75px;
-    background-color: #1e1e1e;
-}
-
 nav   {
+    padding: .5vh 2vw;
+    background-color: #1e1e1e;
     display: flex;
-    width: 84%;
-    margin: 20px auto;
-    padding: 20px 0px;
+    flex-wrap: wrap;
+    max-width: inherit;
+    max-height: inherit;
+    justify-content: space-between;
     align-items: center;
-    justify-content:space-between;
 }
 
-nav a {
-    font-size: 35px;
+.navicon {
     display: flex;
     text-decoration: none;
     justify-content: space-around;
+    align-items: center;
     color: white;
     transition: 300ms ease;
 }
 
-nav a span:nth-child(1) {
+.navicon span:nth-child(1) {
     font-family: playwrite;
-    margin-right: 5px;
+    margin-right: .5vw;
+    font-size: 2vw;
 }
 
-nav a span:nth-child(2) {
-    font-family: American Captain;
+.navicon span:nth-child(2) {
+    font-family: Saria_condensed;
+    font-size: 3vw;
 }
 
-nav a:hover span:nth-child(2) {
+.navicon:hover span:nth-child(2) {
     color: orange;
 }
 
 nav ul {
     background: transparent;
     display: flex;
-    flex-wrap: nowrap;
+    gap: 1vw;
+    justify-content: space-around;
+    align-items: center;
 }
 nav ul li   {
-    display: inline-flex;
     list-style: none;
-    padding: 10px 20px 10px 20px;
-    justify-content: space-around;
 }
 
 nav ul li a   {
-    font-size: 13px;
+    font-size: 1.3vw;
     background: transparent;
     border: none;
-    padding: 10px 5px;
     color: white;
     text-transform: uppercase;
     position: relative;
-    transition: 0.5s ease;
+    transition: 0.5s ease hover;
     cursor: pointer;
 }
 
@@ -107,9 +102,9 @@ nav ul li a::before   {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
-    height: 2px;
+    bottom: -.3vw;
     width: 0;
+    height: .2vw;
     background-color: orange;
     transition: 0.5s ease;
 }
@@ -146,11 +141,11 @@ nav a   {
 .connect_button {
     cursor: pointer;
     position: relative;
-    padding: 5px 30px;
-    font-size: 18px;
+    padding: .5vw 2vw;
+    font-size: 1.5vw;
     color: orange;
     border: 2px solid orange;
-    border-radius: 34px;
+    border-radius: 2vw;
     background-color: transparent;
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
@@ -162,8 +157,8 @@ nav a   {
     position: absolute;
     inset: 0;
     margin: auto;
-    width: 50px;
-    height: 50px;
+    width: 3.5vw;
+    height: 3vh;
     border-radius: inherit;
     scale: 0;
     z-index: -1;
@@ -178,7 +173,7 @@ nav a   {
 .connect_button:hover {
     color: #212121;
     scale: 1.1;
-    box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
+    box-shadow: 0 0px 3vw rgba(193, 163, 98,0.4);
     transform: rotate(-2deg);
 }
 
@@ -200,39 +195,40 @@ nav a   {
  *    ***                    ***
  */
 
-
-.detail   {
-    padding: 10%;
-    background: #1e1e1e;
-    margin-top: 20px;
+main {
+    background-color: #1e1e1e;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1vw;
+    padding: 5vw;
+    gap: 10vw;
 }
 
 .detail h1   {
-    font-size: 50px;
+    font-size: 3.2vw;
     color: #8e8e8e;
-    margin-bottom: 20px;
     font-family: sans-serif;
 }
 
 .firstname   {
     color: #ffffff;
-    font-size: 100px;
+    font-size: 5.5vw;
     font-family: playwrite;
     font-weight: lighter;
 }
 
 .lastname   {
-    font-size: 100px;
+    font-size: 8vw;
     color: orange;
-    font-family: American Captain;
+    font-family: Saria_condensed;
     font-weight: lighter;
 }
 
 .introline p {
     color: #8e8e8e;
     font-family: My Font1;
-    font-size: 25px;
-    max-width: fit-content;
+    font-size: 2vw;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid orange; /* The typewriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
@@ -246,7 +242,7 @@ nav a   {
 
 @keyframes typing {
     0% { width: 0; border-right: .15em solid orange; }
-    100% { width: 100%; border-right: none; }
+    100% { width: 100% ; border-right: none; }
 }
 
 @keyframes blink-caret {
@@ -264,15 +260,15 @@ nav a   {
 
 
 .sociallinks {
-    margin-top: 22px;
-    margin-bottom: 22px;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
 }
 
 .sociallinks li {
     display: inline-flex;
     list-style: none;
     justify-content: space-around;
-    padding-right: 10px;
+    padding-right: 1vw;
 }
 
 .sociallinks li a {
@@ -284,10 +280,10 @@ nav a   {
     display: flex;
     align-items: center;
     background: transparent;
-    padding: 10px 10px;
+    padding: .5vw 1vw;
     text-decoration: none;
     cursor: pointer;
-    border-radius: 25px;
+    border-radius: 2vw;
     transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
     border: none;
     color: orange;
@@ -296,7 +292,8 @@ nav a   {
 }
 
 .sociallinks li button .app_name {
-    margin-left: 10px;
+    margin-left: .5vw;
+    font-size: 1.3vw;
     opacity: 0;
     max-width: 0;
     overflow: hidden;
@@ -305,7 +302,7 @@ nav a   {
 
 .sociallinks li button:hover .app_name {
     opacity: 1;
-    max-width: 100px;
+    max-width: 8vw;
 }
 
 .linkedin_button:hover {
@@ -333,159 +330,20 @@ nav a   {
     background: #4BCA59;
 }
 
-
-.cv_button {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    background: none;
-    color: #272727;
-    cursor: pointer;
-    position: relative;
-    padding: 8px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 12px;
-    transition: all .15s ease;
-}
-
-.cv_button::before,
-.cv_button::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    left: 0;
-    height: calc(50% - 5px);
-    border: 1px solid white;
-    transition: all .15s ease;
-}
-
-.cv_button::before {
-    top: 0;
-    border-bottom-width: 0;
-}
-
-.cv_button::after {
-    bottom: 0;
-    border-top-width: 0;
-}
-
-.cv_button:active,
-.cv_button:focus {
-    outline: none;
-}
-
-.cv_button:active::before,
-.cv_button:active::after {
-    right: 3px;
-    left: 3px;
-}
-
-.cv_button:active::before {
-    top: 3px;
-}
-
-.cv_button:active::after {
-    bottom: 3px;
-}
-
-.cv_button_lg {
-    position: relative;
-    display: block;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: #272727;
-    overflow: hidden;
-    box-shadow: inset 0px 0px 0px 1px transparent;
-}
-
-.cv_button_lg::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2px;
-    height: 2px;
-    background-color: #272727;
-}
-
-.cv_button_lg::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 10px;
-    height: 10px;
-    background-color: #272727;
-    transition: all .2s ease;
-}
-
-.cv_button_sl {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: -1px;
-    left: -8px;
-    width: 0;
-    background-color: #585858;
-    transform: skew(-15deg);
-    transition: all .2s ease;
-}
-
-.cv_button_text {
-    position: relative;
-    text-decoration: none;
-    font-size: larger;
-    color: white;
-}
-
-.cv_button:hover {
-    color: #272727;
-}
-
-.cv_button:hover .cv_button_text {
-    color: orange;
-}
-
-.cv_button:hover .cv_button_sl {
-    width: calc(100% + 15px);
-}
-
-.cv_button:hover .cv_button_lg::after {
-    background-color: orange;
-}
-
-
 .display   {
-    position: absolute;
-    width: 45%;
-    height: 80%;
-    bottom: 5%;
-    right: 100px;
-}
-
-.shape  {
-    display: block;
-    height: 450px;
-    width: 450px;
-    transform: translateX(120px) translateY(100px);
+    height: 28vw;
+    width: 28vw;
     background-color: rgb(0, 0, 0);
     border-radius: 60% 40% 16% 84% / 75% 85% 15% 25%;
-    border: solid 5px rgba(255, 174, 0, 0.815);
+    border: solid .3vw rgba(255, 174, 0, 0.815);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .display img   {
-    transform: translateX(-50%);
-    max-height: 90%;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
     animation: image-display 2s;
+    max-width: 20vw;
 }
 
 @keyframes image-display {
