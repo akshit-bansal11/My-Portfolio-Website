@@ -110,33 +110,13 @@ nav ul li a::before   {
     width: 0;
     height: .2vw;
     background-color: orange;
-    transition: hover 0.5s ease;
-}
-
-nav ul li a:hover   {
-    color: white;
+    transition: width 0.5s ease;
 }
 
 nav ul li a:hover::before   {
     width: 100%;
 }
 
-nav ul li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 0;
-    width: 100%;
-    background-color: orange;
-    transition: hover 0.4s ease;
-    z-index: -1;
-}
-
-nav ul li a:hover::after   {
-    height: 100%;
-
-}
 
 nav a   {
     text-decoration: none;
