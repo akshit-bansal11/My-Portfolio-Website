@@ -17,6 +17,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -58,7 +59,7 @@ nav   {
     justify-content: space-around;
     align-items: center;
     color: white;
-    transition: 300ms ease;
+    transition: hover 300ms ease;
 }
 
 .navicon span:nth-child(1) {
@@ -82,9 +83,12 @@ nav ul {
     gap: 1vw;
     justify-content: space-around;
     align-items: center;
+    max-height: inherit;
 }
 nav ul li   {
     list-style: none;
+    display: flex;
+    align-items: center;
 }
 
 nav ul li a   {
@@ -94,7 +98,7 @@ nav ul li a   {
     color: white;
     text-transform: uppercase;
     position: relative;
-    transition: 0.5s ease hover;
+    transition: hover 0.5s ease hover;
     cursor: pointer;
 }
 
@@ -106,7 +110,7 @@ nav ul li a::before   {
     width: 0;
     height: .2vw;
     background-color: orange;
-    transition: 0.5s ease;
+    transition: hover 0.5s ease;
 }
 
 nav ul li a:hover   {
@@ -125,7 +129,7 @@ nav ul li a::after {
     height: 0;
     width: 100%;
     background-color: orange;
-    transition: 0.4s ease;
+    transition: hover 0.4s ease;
     z-index: -1;
 }
 
@@ -136,6 +140,8 @@ nav ul li a:hover::after   {
 
 nav a   {
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .connect_button {
@@ -144,11 +150,11 @@ nav a   {
     padding: .5vw 2vw;
     font-size: 1.5vw;
     color: orange;
-    border: 2px solid orange;
+    border: .25vw solid orange;
     border-radius: 2vw;
     background-color: transparent;
     font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: hover 0.3s cubic-bezier(0.23, 1, 0.320, 1);
     overflow: hidden;
 }
 
@@ -163,7 +169,7 @@ nav a   {
     scale: 0;
     z-index: -1;
     background-color: orange;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: hover 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
 .connect_button:hover::before {
@@ -173,7 +179,7 @@ nav a   {
 .connect_button:hover {
     color: #212121;
     scale: 1.1;
-    box-shadow: 0 0px 3vw rgba(193, 163, 98,0.4);
+    box-shadow: 0 0vw 3vw rgba(193, 163, 98,0.4);
     transform: rotate(-2deg);
 }
 
@@ -199,9 +205,11 @@ main {
     background-color: #1e1e1e;
     max-width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-top: 1vw;
-    padding: 5vw;
+    justify-content: center;
+    align-items: center;
+    padding: 5vw 0;
     gap: 10vw;
 }
 
@@ -262,6 +270,8 @@ main {
 .sociallinks {
     margin-top: 2vw;
     margin-bottom: 2vw;
+    display: flex;
+    max-width: min-content;
 }
 
 .sociallinks li {
@@ -284,25 +294,31 @@ main {
     text-decoration: none;
     cursor: pointer;
     border-radius: 2vw;
-    transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: hover 0.2s cubic-bezier(0.23, 1, 0.32, 1);
     border: none;
-    color: orange;
     overflow: hidden;
     white-space: nowrap;
 }
 
+.sociallinks li button i {
+    color: orange;
+}
+
 .sociallinks li button .app_name {
+    color: transparent;
     margin-left: .5vw;
     font-size: 1.3vw;
     opacity: 0;
     max-width: 0;
     overflow: hidden;
-    transition: max-width 1s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition:  max-width 1s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .sociallinks li button:hover .app_name {
     opacity: 1;
     max-width: 8vw;
+    color: white;
+    background: inherit;
 }
 
 .linkedin_button:hover {
@@ -330,6 +346,10 @@ main {
     background: #4BCA59;
 }
 
+.sociallinks li button:hover i {
+    color: white;
+}
+
 .display   {
     height: 28vw;
     width: 28vw;
@@ -339,14 +359,23 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: hover ease 200ms;
+}
+
+.display:hover {
+    filter: drop-shadow(orange 0 0 1vw);
 }
 
 .display img   {
-    animation: image-display 2s;
     max-width: 20vw;
+    transition: hover ease 100ms;
 }
 
-@keyframes image-display {
+.display:hover img {
+    transform: scale(1.15);
+}
+
+@keyframes fade {
     0% {
         opacity: 0;
     }
@@ -370,19 +399,20 @@ main {
  */
 
 footer   {
-    display: block;
     position: relative;
-    padding: 25px 0 25px 0;
-    width: 100%;
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    padding: 1.8vw 0 1.8vw 0;
+    max-width: 100%;
     background-color: #000000;
 }
 
 .contacts {
-    width: 100%;
+    max-width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-around;
-    margin-top: 25px;
 }
 
 
@@ -390,7 +420,7 @@ footer   {
     display: flex;
     align-items: center;
     filter: opacity(75%);
-    transition: 100ms;
+    transition: hover 100ms;
     cursor: pointer;
 }
 
@@ -401,10 +431,13 @@ footer   {
 .phone p, .email p, .location p{
     font-family: sans-serif;
     color: white;
+    display: flex;
 }
+
 
 .contacts div p a {
     color: white;
+    font-size: 1.3vw;
     text-decoration: none;
 }
 
@@ -413,24 +446,24 @@ footer   {
 .copyright {
     width: 100%;
     color: #8e8e8e;
-    font-size: 15px;
+    font-size: 1.4vw;
     text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: .4vw;
+    padding-bottom: .4vw;
 }
 
 /* *ScrollBar* */
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 1.2vw;
 }
 
 ::-webkit-scrollbar-track   {
     background-color: #000000;
-    border: solid 3px orange;
+    border: solid .3vw orange;
 }
 
 ::-webkit-scrollbar-thumb   {
     background-color: orange;
-    border: solid 3px #000000;
+    border: solid .4vw #000000;
 }
