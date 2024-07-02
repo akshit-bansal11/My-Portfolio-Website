@@ -1,11 +1,11 @@
 @font-face {
-    font-family: American Captain;
-    src: url(/Assets/Fonts/American_Captain.ttf);
+    font-family: saria;
+    src: url(/Assets/Fonts/SairaExtraCondensed-Medium.ttf);
 }
 
 @font-face {
-    font-family: My Font-1;
-    src: url(/Assets/Fonts/MyFont1.ttf);
+    font-family: playwrite;
+    src: url(/Assets/Fonts/playwrite.ttf);
 }
 
 @font-face {
@@ -17,76 +17,88 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
     background: #5b5b5b;
-
+    max-width: 100%;
+    max-height: 100%;
 }
 
-/* *Header* */
+/* 
+*    ***                  ***
+*    ***                  ***
+*    ***                  ***
+*    ***                  ***
+*    ***                  ***
+*    ************************
+*    ************************
+*    ***                  ***
+*    ***                  ***
+*    ***                  ***
+*    ***                  ***
+*    ***                  ***
 
-header   {
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 100px;
-    background-color: #1e1e1e;
-}
+ */
 
 nav   {
+    padding: .5vh 2vw;
+    background-color: #1e1e1e;
     display: flex;
-    flex-wrap: nowrap;
-    width: 84%;
-    margin: auto;
-    padding: 20px 0px;
+    flex-wrap: wrap;
+    max-width: inherit;
+    max-height: inherit;
+    justify-content: space-between;
     align-items: center;
-    justify-content:space-between;
 }
 
-nav a {
-    font-size: 35px;
+.navicon {
     display: flex;
     text-decoration: none;
     justify-content: space-around;
+    align-items: center;
     color: white;
-    transition: 0.5s ease;
+    transition: hover 300ms ease;
 }
 
-nav a span:nth-child(1) {
-    font-family: My Font-1;
-    margin-right: 5px;
+.navicon span:nth-child(1) {
+    font-family: playwrite;
+    margin-right: .5vw;
+    font-size: 2vw;
 }
 
-nav a span:nth-child(2) {
-    font-family: American Captain;
+.navicon span:nth-child(2) {
+    font-family: saria;
+    font-size: 3vw;
 }
 
-nav a:hover span:nth-child(2) {
+.navicon:hover span:nth-child(2) {
     color: orange;
 }
 
 nav ul {
     background: transparent;
     display: flex;
-    flex-wrap: nowrap;
+    gap: 1vw;
+    justify-content: space-around;
+    align-items: center;
+    max-height: inherit;
 }
 nav ul li   {
-    display: inline-flex;
     list-style: none;
-    padding: 10px 20px 10px 20px;
-    justify-content: space-around;
+    display: flex;
+    align-items: center;
 }
 
 nav ul li a   {
-    font-size: 13px;
+    font-size: 1.3vw;
     background: transparent;
     border: none;
-    padding: 10px 5px;
     color: white;
     text-transform: uppercase;
     position: relative;
-    transition: 0.5s ease;
+    transition: hover 0.5s ease hover;
     cursor: pointer;
 }
 
@@ -94,11 +106,11 @@ nav ul li a::before   {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
-    height: 2px;
+    bottom: -.3vw;
     width: 0;
+    height: .2vw;
     background-color: orange;
-    transition: 0.5s ease;
+    transition: hover 0.5s ease;
 }
 
 nav ul li a:hover   {
@@ -117,7 +129,7 @@ nav ul li a::after {
     height: 0;
     width: 100%;
     background-color: orange;
-    transition: 0.4s ease;
+    transition: hover 0.4s ease;
     z-index: -1;
 }
 
@@ -128,19 +140,21 @@ nav ul li a:hover::after   {
 
 nav a   {
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .connect_button {
     cursor: pointer;
     position: relative;
-    padding: 5px 30px;
-    font-size: 18px;
+    padding: .5vw 2vw;
+    font-size: 1.5vw;
     color: orange;
-    border: 2px solid orange;
-    border-radius: 34px;
+    border: .25vw solid orange;
+    border-radius: 2vw;
     background-color: transparent;
     font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: hover 0.3s cubic-bezier(0.23, 1, 0.320, 1);
     overflow: hidden;
 }
 
@@ -149,13 +163,13 @@ nav a   {
     position: absolute;
     inset: 0;
     margin: auto;
-    width: 50px;
-    height: 50px;
+    width: 3.5vw;
+    height: 3vh;
     border-radius: inherit;
     scale: 0;
     z-index: -1;
     background-color: orange;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: hover 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
 .connect_button:hover::before {
@@ -165,28 +179,28 @@ nav a   {
 .connect_button:hover {
     color: #212121;
     scale: 1.1;
-    box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
+    box-shadow: 0 0vw 3vw rgba(193, 163, 98,0.4);
+    transform: rotate(-2deg);
 }
 
 .connect_button:active {
     scale: 1;
 }
-/* *Footer* */
-
 footer   {
-    display: block;
     position: relative;
-    padding: 25px 0 25px 0;
-    width: 100%;
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    padding: 1.8vw 0 1.8vw 0;
+    max-width: 100%;
     background-color: #000000;
 }
 
 .contacts {
-    width: 100%;
+    max-width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-around;
-    margin-top: 25px;
 }
 
 
@@ -194,44 +208,50 @@ footer   {
     display: flex;
     align-items: center;
     filter: opacity(75%);
-    transition: 100ms;
+    transition: hover 100ms;
+    cursor: pointer;
 }
 
 .phone:hover, .email:hover, .location:hover{
     filter: opacity(100%);
 }
 
-.phone svg, .email svg, .location svg {
-    color: orange;
-    margin-right: 7px;
-}
-
 .phone p, .email p, .location p{
     font-family: sans-serif;
     color: white;
+    display: flex;
 }
+
+
+.contacts div p a {
+    color: white;
+    font-size: 1.3vw;
+    text-decoration: none;
+}
+
+
 
 .copyright {
     width: 100%;
     color: #8e8e8e;
-    font-size: 15px;
+    font-size: 1.4vw;
     text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: .4vw;
+    padding-bottom: .4vw;
 }
 
 /* *ScrollBar* */
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 1.2vw;
 }
 
 ::-webkit-scrollbar-track   {
     background-color: #000000;
-    border: solid 3px orange;
+    border: solid .3vw orange;
 }
 
 ::-webkit-scrollbar-thumb   {
     background-color: orange;
-    border: solid 3px #000000;
+    border: solid .4vw #000000;
 }
