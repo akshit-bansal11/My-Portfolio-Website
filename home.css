@@ -1,16 +1,16 @@
 @font-face {
     font-family: saria;
-    src: url(/Assets/Fonts/SairaExtraCondensed-Medium.ttf);
+    src: url(./Assets/Fonts/SairaExtraCondensed-Medium.ttf);
 }
 
 @font-face {
     font-family: playwrite;
-    src: url(/Assets/Fonts/playwrite.ttf);
+    src: url(./Assets/Fonts/playwrite.ttf);
 }
 
 @font-face {
     font-family: Futura Light;
-    src: url(/Assets/Fonts/futura/intrepid.ttf);
+    src: url(./Assets/Fonts/futura/intrepid.ttf);
 }
 
 *   {
@@ -184,13 +184,12 @@ nav a   {
 main {
     background-color: #1e1e1e;
     max-width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
     margin-top: 1vw;
-    justify-content: center;
-    align-items: center;
     padding: 5vw 0;
-    gap: 10vw;
+}
+
+#home {
+    display: flex;
 }
 
 .detail h1   {
