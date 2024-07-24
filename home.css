@@ -17,6 +17,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
     scroll-behavior: smooth;
 }
 
@@ -383,7 +384,7 @@ main {
 }
 
 .projectsHeading h1 {
-    font-size: 2vw;
+    font-size: 2rem;
     color: orange;
 }
 
@@ -399,11 +400,73 @@ main {
 .projectCard {
     display: flex;
     flex-direction: column;
+    align-items: start;
+    background-color: rgb(49, 48, 48);
+    color: white;
+    width: 15rem;
+    height: 25rem;
+}
+
+.projectCardImage {
+    border: solid orange .1rem;
+    width: inherit;
+}
+
+.projectCardBody {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding: 0 1rem;
+    gap: 1rem;
+}
+
+.projectCardTitle {
+    margin: 0;
+}
+
+.projectCardDescription {
+    margin: 0;
+}
+
+.projectCardIcons {
+    display: flex;
+    gap: .5rem;
+    font-size: 1.5rem;
+}
+
+.fa-html5 {
+    color: #FF6D00;
+}
+
+.fa-css3 {
+    color: #039BE5;
+}
+
+.fa-js {
+    color: #FFD600;
+}
+
+.projectCardButtons {
+    display: flex;
+    gap: .5rem;
+}
+
+.projectCardButton {
+    width: 4rem;
+    height: 2rem;
+    display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
-    color: white;
-    width: 15vw;
+    background-color: orange;
+    border: none;
+    color: black;
+    text-decoration: none;
+    border-radius: .1rem;
+}
+
+.projectCardButton:hover {
+    background-color: rgba(255, 166, 0, 0.89);
+    color: black;
 }
 
 /*
@@ -454,12 +517,13 @@ footer   {
     font-family: sans-serif;
     color: white;
     display: flex;
+    margin: 0;
 }
 
 
 .contacts div p a {
     color: white;
-    font-size: 1.3vw;
+    font-size: 1.1rem;
     text-decoration: none;
 }
 
